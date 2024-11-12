@@ -23,11 +23,15 @@ function App() {
   return (
     <>
       <h1>Tasks</h1>
-      <ul className="taskList">
-        {tasks.map((task) => (
-          <Task {...task} key={task.id} toggleTask={toggleTask} />
-        ))}
-      </ul>
+      {tasks.length > 0 ? (
+        <ul className="taskList">
+          {tasks.map((task) => (
+            <Task {...task} key={task.id} toggleTask={toggleTask} />
+          ))}
+        </ul>
+      ) : (
+        <p>Add some tasks...</p>
+      )}
     </>
   );
 }
